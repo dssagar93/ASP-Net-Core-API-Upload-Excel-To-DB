@@ -35,7 +35,7 @@ namespace ExcelToDatabase.Services
             _config = config.GetConnectionString("AppConnectionString");
         }
 
-        public void UploadExcel(IFormFile formFile)
+        public string UploadExcel(IFormFile formFile)
         {
             var ms = new MemoryStream();
             formFile.CopyTo(ms);
