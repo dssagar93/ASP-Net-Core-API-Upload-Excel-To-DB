@@ -37,6 +37,9 @@ namespace ExcelToDatabase.Services
 
         public void UploadExcel(IFormFile formFile)
         {
+            if(formFile.FileName.Split('.').Last() !="xls" && formFile.FileName.Split('.').Last() !="xlsx")
+                throw new ValidationException("Please send an excel file to upload");
+            
             var ms = new MemoryStream();
             formFile.CopyTo(ms);
 
