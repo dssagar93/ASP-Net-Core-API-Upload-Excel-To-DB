@@ -9,7 +9,7 @@ namespace ExcelToDatabase.Services
 {
     public interface IBrandChannelService
     {
-        public string UploadExcel(IFormFile formFile);
+        public void UploadExcel(IFormFile formFile);
         public DataTable GetBrandChannel(string query);
     }
 }
